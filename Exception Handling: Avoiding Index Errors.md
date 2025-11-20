@@ -1,18 +1,51 @@
-# Exception Handling in Python: Avoiding Index Errors
+# Exp.No:17  
+## EXCEPTION HANDLING
 
-## 🎯 Aim
-To write a Python program that handles an **IndexError** when trying to access an element beyond the available range of a list.
+---
 
-## 🧠 Algorithm
-1. Define a list `list1` with some integer elements.
-2. Use a **try-except** block:
-   - In the `try` block, attempt to access an index that is out of range (e.g., `list1[5]`).
-   - In the `except` block, catch the error and print a custom message `"You're out of list range"`.
-3. Print the result based on whether the index access succeeds or fails.
+### AIM  
+To create a Python program that prompts the user for a list of grades separated by commas, splits the string into individual grades, and uses exception handling to inform the user if the values they entered cannot be converted to integers.
 
-## 🧾 Program
-Add code here
+---
 
-## Output
+### ALGORITHM
 
-## Result
+1. Begin the program.  
+2. Read a string `input_str` from the user using `input()`.  
+3. Split the input string using commas (`,`) to create a list of grades.  
+4. Use a `try` block to attempt converting each item in the grades list to an integer and store the result in `l1`.  
+5. If the conversion is successful, print the list `l1` containing the integer values.  
+6. If an error occurs during conversion (for example, if the input is not a valid number), catch the exception and print an error message: `"The grades you entered were in an invalid format."` along with the original grades list.  
+7. Terminate the program.
+
+---
+
+### PROGRAM
+
+```
+Reg.No:212223070004
+Name:dhushanth.km
+def get_grades():
+    user_input = input("Enter grades separated by commas: ")
+    grades_str = user_input.split(',')
+    grades = []
+
+    for g in grades_str:
+        try:
+            grade = int(g.strip())
+            grades.append(grade)
+        except ValueError:
+            print(f"Invalid grade input: '{g.strip()}' is not an integer.")
+
+    print("Valid grades:", grades)
+
+get_grades()
+
+
+```
+
+### OUTPUT
+![image](https://github.com/user-attachments/assets/b41a21b2-9e0f-4e3e-89b0-8667e14c98ce)
+
+### RESULT
+thus the above program is executed successfully
